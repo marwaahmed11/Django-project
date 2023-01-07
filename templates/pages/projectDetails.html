@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Project {{project.id}} Details</h1>
+<div class="card" style="width: 18rem">
+    {% if project.image %} <img src="{{project.image.url}}"  class="card-img-top" alt="image" width="200px"/> {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">Name: {{project.name}}</h5>
+        <p class="card-text">Description:  {{project.Description}}</p>
+        <p class="card-text">Current Money:  {{project.current_situation}}</p>
+        <p class="card-text">Start Date:  {{project.start_date}}</p>
+        <p class="card-text">End Date:  {{project.end_date}}</p>
+        <p class="card-text">Category:  {{project.category}}</p>
+        <a href ="{% url 'showAllProjects' %}" class="btn btn-primary">Show All Projects</a>
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}
